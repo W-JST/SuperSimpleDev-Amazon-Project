@@ -49,3 +49,11 @@ export const removeFromCart = (productId) => {
 const saveToStorage = () => {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
+
+export const calculateCartQuantity = () => {
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  return cartQuantity;
+};
