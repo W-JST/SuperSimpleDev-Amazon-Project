@@ -656,5 +656,36 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "Black Backpack for Laptop and Books",
+    rating: {
+      stars: 4,
+      count: 157
+    },
+    priceCents: 2100,
+    keywords: [
+      "Bag",
+      "Backpack",
+      "Laptop Bag",
+      "Book Bag"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Metal Umbrella",
+    rating: {
+      stars: 4,
+      count: 17
+    },
+    priceCents: 350,
+    keywords: [
+      "Umbrella",
+      "Metal Umbrella",
+      "Rain Cover"
+    ]
   }
 ];
