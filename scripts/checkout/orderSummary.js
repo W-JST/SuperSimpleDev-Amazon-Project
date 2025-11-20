@@ -18,7 +18,7 @@ export function renderOrderSummary () {
 
     const matchingProduct = getProduct(productId);
 
-    const deliveryOptionId = cartItem.deliveryOptionsId;
+    const deliveryOptionId = cartItem.deliveryOptionId;
 
     const deliveryOption = getDeliveryOption(deliveryOptionId);
     
@@ -37,10 +37,12 @@ export function renderOrderSummary () {
           src="${matchingProduct.image}">
 
         <div class="cart-item-details">
-          <div class="product-name">
+          <div class="product-name 
+          js-product-name-${matchingProduct.id}">
             ${matchingProduct.name}
           </div>
-          <div class="product-price">
+          <div class="product-price
+          js-product-price-${matchingProduct.id}">
             $${formatCurrency(matchingProduct.priceCents)}
           </div>
           <div class="product-quantity
@@ -82,15 +84,18 @@ export function renderOrderSummary () {
       const dateString = calculateDeliveryDate(deliveryOption);
       const priceString = deliveryOption.priceCents === 0 ? 'Free' : `$${formatCurrency(deliveryOption.priceCents)} -` ;
 
-      const isChecked = deliveryOption.id === cartItem.deliveryOptionsId;
+      const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
       html +=`
-      <div class="delivery-option js-delivery-option"
+      <div class="delivery-option js-delivery-option
+      js-delivery-option-${matchingProduct.id}
+      js-delivery-option-${matchingProduct.id}-${deliveryOption.id}"
       data-product-id="${matchingProduct.id}"
       data-delivery-option-id="${deliveryOption.id}">
         <input type="radio"
           ${isChecked ? 'checked' : ''}
-          class="delivery-option-input"
+          class="delivery-option-input
+          js-delivery-option-input-${matchingProduct.id}-${deliveryOption.id}"
           name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">

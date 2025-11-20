@@ -10,7 +10,7 @@ export function renderPaymentSummary () {
         const product = getProduct(cartItem.productId);
         productPriceCents += product.priceCents * cartItem.quantity;
 
-        const deliveryOption = getDeliveryOption(cartItem.deliveryOptionsId);
+        const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
         shippingPriceCents += deliveryOption.priceCents;
     });
 
@@ -27,7 +27,7 @@ export function renderPaymentSummary () {
 
         <div class="payment-summary-row">
         <div>Items (${calculateCartQuantity()}):</div>
-        <div class="payment-summary-money">
+        <div class="payment-summary-money js-payment-summary-shipping">
             $${formatCurrency(productPriceCents)}</div>
         </div>
 
@@ -51,7 +51,7 @@ export function renderPaymentSummary () {
 
         <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">
+        <div class="payment-summary-money js-payment-summary-total">
             $${formatCurrency(totalCents)}</div>
         </div>
 
