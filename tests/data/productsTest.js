@@ -45,7 +45,7 @@ describe('test suite: Product', () => {
   });
 
 });
-s
+
 describe('test suite: Clothing', () => {
   let clothing;
 
